@@ -460,34 +460,68 @@ body {
 /* ==========================================
    LOGIN
 ========================================== */
+
 .login-container {
-    background: var(--naranja);
-    min-height: calc(100vh - 70px);
+    width: 100%;
+    min-height: 80vh;          
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
+    justify-content: center;   
+    align-items: center;       
+    padding-top: 40px;        
 }
-
+/* TÍTULO */
 .login-titulo {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: var(--verde-claro);
+    font-size: 2rem;
+    color: #2d2a2a;
+    margin-bottom: 20px;
 }
 
+/* FORMULARIO */
 .login-form {
+    padding: 30px;
+    border-radius: 12px;
     width: 100%;
-    max-width: 400px;
+    max-width: 400px;             
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin: 0 auto;               
 }
 
+/* LABELS */
+.login-form label {
+    font-weight: 600;
+    color: #2d2a2a;
+}
+
+/* INPUTS */
+.login-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: 0.2s ease;
+}
+
+.login-form input:focus {
+    border-color: #7bb15e;
+    outline: none;
+}
+
+/* BOTÓN */
+.login-form .btn-ver {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: center;
+}
 
 /* ==========================================
-   FORM INPUTS (unificados)
+   FORM INPUTS 
 ========================================== */
 label {
     font-weight: 600;
@@ -534,7 +568,6 @@ textarea {
    UBICACIÓN
 ========================================== */
 .bloque-ubicacion {
-    background: #e8e6e4;
     padding: 40px 30px;
     margin-top: 130px;
 }
@@ -594,27 +627,98 @@ textarea {
 }
 
 
-/* ==========================================
-   FORMULARIO CONTACTO
-========================================== */
+/* =============================
+   SECCIÓN FORMULARIO
+============================= */
 .bloque-formulario {
-    padding: 50px 20px;
-    background: #e8e6e4;
+    background: var(--naranja); 
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
 }
 
 .titulo-form {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #204d63;
+    margin-bottom: 30px;
     text-align: center;
-    font-size: 30px;
-    margin-bottom: 25px;
 }
 
+
 .formulario-contacto {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;      
+    background: transparent; 
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
 }
 
 .grupo {
-    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.grupo label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.grupo input,
+.grupo textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.btn-enviar {
+    background: var(--verde-claro);
+    color: var(--blanco);
+    padding: 18px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.20);
+    transition: 0.3s ease;
+    transform: translateY(0);
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background: #95c364;
+    transform: scale(1.05);
+}
+.mensaje-exito {
+    background: #4caf50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    margin: 20px auto;
+    width: fit-content;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.4s ease;
+}
+
+.mensaje-exito.mostrar {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -686,18 +790,13 @@ textarea {
     margin-bottom: 15px;
 }
 
-/* ==========================================
-   SEPARACIÓN ENTRE INTRODUCCIÓN Y TALLER
-========================================== */
+
 .intro-separador {
     height: 60px;
-    /* espacio moderado */
     background: var(--naranja);
 }
 
-/* ==========================================
-   SECCIÓN TALLER HOME — texto + carrusel
-========================================== */
+
 .taller-section-home {
     display: flex;
     justify-content: space-between;
@@ -705,7 +804,6 @@ textarea {
     width: 100%;
     background: var(--naranja);
     padding: 100px 60px;
-    /* esto da separación ARRIBA y abajo */
     gap: 60px;
 }
 
@@ -722,7 +820,6 @@ textarea {
     margin-bottom: 25px;
 }
 
-/* Mantengo tu botón original (btn-ver) */
 
 .carrusel {
     display: flex;
