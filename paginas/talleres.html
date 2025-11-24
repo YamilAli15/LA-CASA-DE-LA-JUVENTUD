@@ -1,0 +1,77 @@
+<!--  MENÚ COMPLETO DE TALLERES -->
+<div class="menu-talleres-completo animar-bajar" id="menu-talleres-completo" style="display: flex;">
+    <div class="contenedor-grid" id="grid-talleres">
+
+
+        <div class="taller-item" onclick=" fetch('./paginas/deporte.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.querySelector('.contenedor').innerHTML = data;
+                       
+                    });">
+            <div class="icono" style="background-image: url('imagenes/iconos/deporte-01.png')"></div>
+            <p>Deporte</p>
+        </div>
+
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/ajedrez-01.png')"></div>
+            <p>Ajedrez</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/arte-01.png')"></div>
+            <p>Arte</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/carpinteria-01.png')"></div>
+            <p>Carpintería</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/ceramica-01.png')"></div>
+            <p>Cerámica</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/herreria-01.png')"></div>
+            <p>Herrería</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/hilorama-01.png')"></div>
+            <p>Hilorama</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/huerta-01.png')"></div>
+            <p>Huerta</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/informatica-01.png')"></div>
+            <p>Informática</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/manualidades-01.png')"></div>
+            <p>Manualidades</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/musica-01.png')"></div>
+            <p>Música</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/panaderia-01.png')"></div>
+            <p>Panadería</p>
+        </div>
+
+        <div class="taller-item">
+            <div class="icono" style="background-image: url('imagenes/iconos/ping_pong-01.png')"></div>
+            <p>Ping Pong</p>
+        </div>
+    </div>
+</div>

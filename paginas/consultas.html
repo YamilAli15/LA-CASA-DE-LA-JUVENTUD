@@ -1,0 +1,97 @@
+<!-- ============================
+    UBICACIÓN + INFO (CORREGIDO)
+============================= -->
+<div>
+
+
+    <section class="bloque-ubicacion">
+        <h2 class="titulo-bloque">Ubicación de la Casa</h2>
+
+        <div class="contenido-ubicacion">
+
+            <!-- MAPA -->
+            <div class="mapa-box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3176.830231975934!2d-58.781021!3d-38.156785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x958fcb0b55c2cb1f%3A0xa275d28dc778586!2sFrancisco%20de%20Caso%20103%2C%20B7635%20Lober%C3%ADa%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1700000000000"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <!-- TEXTO -->
+            <div class="info-box">
+                <h3 class="subtitulo">Horarios de Atención</h3>
+                <ul class="lista-horarios">
+                    <li><strong>Lunes a Viernes:</strong> 08:00 a 13:00</li>
+                    <li><strong>Sábados:</strong> 09:00 a 12:00</li>
+                    <li><strong>Domingos:</strong> Cerrado</li>
+                </ul>
+
+                <h3 class="subtitulo">Información adicional</h3>
+                <p>
+                    Este espacio brinda atención, actividades y acompañamiento para jóvenes de la ciudad.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="bloque-formulario">
+        <h2 class="titulo-form">Envíanos tu consulta o sugerencia</h2>
+
+        <form class="formulario-contacto">
+            <div class="grupo">
+                <label>Nombre</label>
+                <input type="text" required>
+            </div>
+
+            <div class="grupo">
+                <label>Email</label>
+                <input type="email" required>
+            </div>
+
+            <div class="grupo">
+                <label>Mensaje</label>
+                <textarea rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+    </section>
+
+    <div id="mensaje-exito" class="mensaje-exito oculto">
+        ¡Tu mensaje se envió con éxito!
+    </div>
+
+</div>
+
+<script>
+    // =====================================================
+    // FORMULARIO – Mensaje + sonido sin recargar
+    // =====================================================
+    let formulario = document.querySelector(".formulario-contacto");
+    let mensajeExito = document.getElementById("mensaje-exito");
+
+    // 🔊 SONIDO DE ÉXITO (PONÉ TU ARCHIVO AQUÍ)
+    let sonidoExito = new Audio("sonidos/exito.mp3");
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault();  // ❌ Evita recargar
+
+        // Reproducir sonido
+        sonidoExito.currentTime = 0;
+        sonidoExito.play();
+
+        // Mostrar cartel
+        mensajeExito.classList.remove("oculto");
+        mensajeExito.classList.add("mostrar");
+
+        // Limpiar formulario
+        formulario.reset();
+
+        // Ocultar después de 3 segundos
+        setTimeout(() => {
+            mensajeExito.classList.remove("mostrar");
+            setTimeout(() => mensajeExito.classList.add("oculto"), 400);
+        }, 2500);
+    });
+</script>
