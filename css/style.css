@@ -10,7 +10,7 @@
 
 :root {
     --verde: #2d2a2a;
-    --naranja: #e8e6e4;
+    --naranja: #f3f3f3;
     --coral: #2d2a2a;
     --verde-claro: #7bb15e;
 
@@ -20,7 +20,7 @@
 }
 
 body {
-    background: #e8e6e4; 
+    background: #f3f3f3; 
 }
 
 .contenedor {
@@ -29,6 +29,12 @@ body {
     max-width: 1900px;
     margin: 0 auto;
   
+}
+
+.centrar {
+    display: flex;
+    justify-content: center;
+    padding: 0 10% 0 10%;
 }
 
 /* ==========================================

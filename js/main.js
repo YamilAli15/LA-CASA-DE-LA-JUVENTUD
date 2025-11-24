@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
         cargarPaginaInicio();
     });
 
+    document.getElementById("btn-login").addEventListener('click', () => {
+        cargarLogin();
+    });
+
     document.getElementById("logo").addEventListener('click', () => {
         cargarPaginaInicio();
     });
@@ -46,5 +50,15 @@ function cargarPaginaInicio() {
         .then(data => {
             document.querySelector('.contenedor').innerHTML = data;
             carrusel = new Carrousel();
+        });
+}
+
+
+function cargarLogin() {
+     fetch('./paginas/login.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.contenedor').innerHTML = data;
+            
         });
 }
