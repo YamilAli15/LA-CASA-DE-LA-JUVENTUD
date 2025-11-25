@@ -18,7 +18,7 @@ body {
 
 #pagina {
     width: 100%;
-    max-width: 1600px;
+    max-width: 1900px;
 }
 
 :root {
@@ -673,12 +673,9 @@ textarea {
 }
 
 .titulo-form {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: #204d63;
-    margin-bottom: 30px;
-    text-align: center;
+   font-size: 2rem;
+    color: #2d2a2a;
+    margin-bottom: 20px;
 }
 
 
