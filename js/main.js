@@ -31,6 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
         activarBoton("btn-talleres");
     });
 
+ function cargarLogin() {
+    fetch('./paginas/login.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.contenedor').innerHTML = data;
+
+            // 🔥 RE-ASIGNAR EVENTO DEL BOTÓN AQUÍ
+            const btnAdmin = document.getElementById("btn-admin");
+            if (btnAdmin) {
+                btnAdmin.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    cargarPaginaAdmin();
+                });
+            }
+        });
+}
     document.getElementById("btn-inicio").addEventListener('click', () => {
         cargarPaginaInicio();
         activarBoton("btn-inicio");
@@ -50,11 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
         cargarPaginaConsultas();
         activarBoton("btn-consultas");
     });
+
 });
 
 
 function cargarPaginaConsultas() {
     fetch('./paginas/consultas.html')
+        .then(response => response.text())
+        .then(data => {
+            document.querySelector('.contenedor').innerHTML = data;
+        });
+}
+function cargarPaginaAdmin() {
+    fetch('./paginas/deportesadmin.html')
         .then(response => response.text())
         .then(data => {
             document.querySelector('.contenedor').innerHTML = data;
