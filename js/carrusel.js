@@ -1,5 +1,3 @@
-
-
 class Carrousel {
 
     constructor() {
@@ -31,32 +29,70 @@ class Carrousel {
             { nombre: "Ping Pong", descripcion: "Torneos y técnicas para mejorar tu juego de ping pong. Ideal para todas las edades, promoviendo concentración, reflejos y diversión.", url: "this.talleres/pingpong.html", imagen: "imagenes/iconos/ping_pong-01.png" }
         ];
 
-        /* Estado actual del carrusel */
+        /* Estado actual */
         this.indiceActual = 0;
 
+
+        /* ==========================================
+             NUEVO — CARRUSEL DE INTRODUCCIÓN
+        ========================================== */
+        this.introImg = document.getElementById("intro-carrusel-img");
+        this.introIzq = document.getElementById("intro-izq");
+        this.introDer = document.getElementById("intro-der");
+
+        /* Imágenes de los chicos en talleres */
+
+        this.introImagenes = [
+            "imagenes/talleres/deporte1.jpg",
+            "imagenes/talleres/deporte2.jpg",
+            "imagenes/talleres/cocina1.jpg",
+            "imagenes/talleres/cocina2.jpg",
+            "imagenes/talleres/ajedrez1.jpg",
+            "imagenes/talleres/ajedrez2.jpg",
+        ];
+
+        this.indiceIntro = 0;
+
         this.mostrarCarrusel();
+        this.mostrarIntro();
         this.cargarListeners();
     }
 
 
-    /* Función para actualizar carrusel e info */
+    /* ==========================================
+         CARRUSEL DE TALLERES (YA EXISTENTE)
+    ========================================== */
     mostrarCarrusel() {
         const taller = this.talleres[this.indiceActual];
         this.carruselImg.style.backgroundImage = `url('${taller.imagen}')`;
         this.tituloTaller.textContent = taller.nombre;
         this.descTaller.textContent = taller.descripcion;
+
         this.btnVerTaller.onclick = () => {
-             fetch('./paginas/deporte.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        document.querySelector('.contenedor').innerHTML = data;
-                       
-                    });
+            fetch('./paginas/deporte.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('.contenedor').innerHTML = data;
+                });
         };
     }
 
-    /* Navegación */
+
+    /* ==========================================
+         NUEVO — CARRUSEL INTRODUCCIÓN
+    ========================================== */
+    mostrarIntro() {
+        this.introImg.style.backgroundImage =
+            `url('${this.introImagenes[this.indiceIntro]}')`;
+    }
+
+
+    /* ==========================================
+         LISTENERS
+    ========================================== */
     cargarListeners() {
+
+        /* --- Carrusel de talleres (ya estaba) --- */
         this.btnIzq.addEventListener("click", () => {
             this.indiceActual = (this.indiceActual - 1 + this.talleres.length) % this.talleres.length;
             this.mostrarCarrusel();
@@ -66,9 +102,19 @@ class Carrousel {
             this.indiceActual = (this.indiceActual + 1) % this.talleres.length;
             this.mostrarCarrusel();
         });
+
+        /* --- Nuevo carrusel de introducción --- */
+        this.introIzq.addEventListener("click", () => {
+            this.indiceIntro = (this.indiceIntro - 1 + this.introImagenes.length) % this.introImagenes.length;
+            this.mostrarIntro();
+        });
+
+        this.introDer.addEventListener("click", () => {
+            this.indiceIntro = (this.indiceIntro + 1) % this.introImagenes.length;
+            this.mostrarIntro();
+        });
     }
 
 }
-
 
 export default Carrousel;

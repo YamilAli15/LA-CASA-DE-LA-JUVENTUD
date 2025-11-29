@@ -54,7 +54,8 @@ body {
     background: var(--verde-claro);
     color: var(--blanco);
     padding: 18px 30px;
-    width: 220px;       /* Tamaño fijo para que todos sean iguales */
+    width: 220px;
+    /* Tamaño fijo para que todos sean iguales */
     text-align: center;
     border: none;
     border-radius: 10px;
@@ -65,8 +66,10 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
     transition: 0.3s ease;
 
-    display: block;      /* 👈 Necesario para centrar */
-    margin: 10px auto;   /* 👈 CENTRADO PERFECTO */
+    display: block;
+    /* 👈 Necesario para centrar */
+    margin: 10px auto;
+    /* 👈 CENTRADO PERFECTO */
 }
 
 .btn-general:hover {
@@ -78,8 +81,10 @@ body {
     background: var(--verde-claro);
     color: var(--blanco);
     padding: 18px 30px;
-    width: 220px;           /* 👈 ANCHO FIJO */
-    text-align: center;     /* 👈 CENTRA EL TEXTO */
+    width: 220px;
+    /* 👈 ANCHO FIJO */
+    text-align: center;
+    /* 👈 CENTRA EL TEXTO */
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -88,7 +93,8 @@ body {
     letter-spacing: 1px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
     transition: 0.3s ease;
-    display: inline-block;  /* 👈 AYUDA A QUE SE RESPETE EL ANCHO */
+    display: inline-block;
+    /* 👈 AYUDA A QUE SE RESPETE EL ANCHO */
 }
 
 .btn-inicio:hover {
@@ -363,6 +369,50 @@ body {
     text-align: center;
 }
 
+.hero-imagen {
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px 0; /* hace la franja más grande sin deformar la imagen */
+    background: var(--naranja); /* opcional para contraste */
+}
+
+.hero-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+
+.intro-carrusel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.intro-flecha {
+    background: none;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.intro-carrusel-img {
+    width: 550px;
+    height: 500px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+.introduccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
 
 /* ==========================================
    SECCIÓN TALLER DESTACADO
@@ -923,6 +973,16 @@ footer {
    📱 SUPER RESPONSIVE GLOBAL
 ========================================== */
 @media (max-width: 600px) {
+    .introduccion {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-carrusel-img {
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
+    }
 
     /* HERO */
     .hero {
@@ -1070,7 +1130,7 @@ footer {
         width: 1000px;
         text-align: center;
     }
-    
+
     /* Contenedor general */
     .taller-section {
         padding: 40px 20px;
